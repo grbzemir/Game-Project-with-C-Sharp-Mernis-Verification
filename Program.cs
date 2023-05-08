@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,8 +41,19 @@ namespace GameProject
             campaign.CampaignId = 1;
             campaign.CampaignName = "Black Friday";
             campaign.DiscountRate = 50;
-
             campaignManager.Add(campaign);
+
+            campaignManager = new CampaignManager();
+            campaign.CampaignId = 2;
+            campaign.DiscountRate = 60;
+            campaign.CampaignName = "New Year";
+            campaignManager.Update(campaign);
+
+            campaignManager = new CampaignManager();
+            campaign.CampaignId = 1;
+            campaign.CampaignName = "Black Friday";
+            campaign.DiscountRate = 50;
+            campaignManager.Remove(campaign);
 
             GameManager gameManager = new GameManager();
             
@@ -55,8 +66,24 @@ namespace GameProject
 
             gameManager.Save(gameInfo);
 
+            gameManager = new GameManager();
+            gameInfo.Id = 2;
+            gameInfo.GameName = "FIFA 2023";
+            gameInfo.GamePrice = 200;
+            gameInfo.GameCategory = "Sports";
+
+            gameManager.Save(gameInfo);
+
+            gameManager = new GameManager();
+
+            gameInfo.Id = 1;
+            gameInfo.GameName = "GTA 5";
+            gameInfo.GamePrice = 100;
+            gameInfo.GameCategory = "Action";
+            gameManager.Save(gameInfo);
+
             SalesManager salesManager = new SalesManager();
-            salesManager.Add(player1, gameInfo, campaign);
+            salesManager.Add(player1, gameInfo, campaign );
 
             Player player2 = new Player();
 
@@ -65,9 +92,16 @@ namespace GameProject
             player2.LastName = "Uzun";
             player2.YearOfBirth = new DateTime(2003 , 6 , 25);
             player2.NationalityId = "12345678910";
-            player2.username = "Bildo";
+            player2.username = "LadyBilge";
 
-            playerManager.Delete(player2);
+            campaignManager = new CampaignManager();
+            campaign.CampaignId = 1;
+            campaign.CampaignName = "Black Friday";
+            campaign.DiscountRate = 50;
+            campaignManager.Add(campaign);
+
+
+            playerManager.Save(player2);
 
 
         }
