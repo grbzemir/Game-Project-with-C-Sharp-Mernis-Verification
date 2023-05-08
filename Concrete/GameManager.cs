@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,25 +16,34 @@ namespace GameProject.Concrete
 
         {
 
-            Console.WriteLine(game.GameName + " isimli oyun eklendi.");
+            Console.WriteLine(game.GameName +  game.GamePrice + " isimli oyun eklendi.");
         }
 
         public void Update(GameInfo game)
 
         {
-            Console.WriteLine(game.GameName + " isimli oyun güncellendi.");
+            Console.WriteLine(game.GameName + game.GamePrice + " isimli oyun güncellendi.");
         }
         public void Delete(GameInfo game)
 
         {
-            Console.WriteLine(game.GameName + " isimli oyun silindi.");
+            Console.WriteLine(game.GameName + game.GamePrice + " isimli oyun silindi.");
         }
 
         public void Save(GameInfo game)
 
         {
-            throw new NotImplementedException();
+            Console.WriteLine("-----------------------------------");
+            Console.WriteLine("Game Info:");
+            Console.WriteLine("Id: " + game.Id);
+            Console.WriteLine("Game Name: " + game.GameName);
+            Console.WriteLine("Game Price: " + game.GamePrice);
+            Console.WriteLine("Game Category: " + game.GameCategory);
+            Console.WriteLine("-----------------------------------");
+
 
         }
+
+
     }
 }
