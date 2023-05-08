@@ -1,4 +1,4 @@
-﻿using GameProject.Abstract;
+using GameProject.Abstract;
 using GameProject.Entities;
 using System;
 using System.Collections.Generic;
@@ -17,15 +17,18 @@ namespace GameProject.Concrete
         {
             double price = gameInfo.GamePrice - (gameInfo.GamePrice * campaign.DiscountRate / 100);
 
-            Console.WriteLine("Oyuncu Adi: " +  campaign.CampaignName);
-            Console.WriteLine("Oyuncu Id: " + campaign.CampaignId);
-            Console.WriteLine("Oyun Adi: " + gameInfo.GameName);
-            Console.WriteLine("Oyun Fiyati: " + gameInfo.GamePrice);
+            Console.WriteLine("Oyuncu Adi: " +  player.FirstName);
+            Console.WriteLine("Oyuncu Id: " + player.Id);
             Console.WriteLine("Kampanya Adi: " + campaign.CampaignName);
             Console.WriteLine("Kampanya Indirimi: " + campaign.DiscountRate);
             Console.WriteLine("Kampanyali Oyun Fiyati: " + price);
-            Console.WriteLine("Oyun Satin Alindi");
 
+            
+
+
+            Console.WriteLine("-----------------");
+            Console.WriteLine("Oyun Satin Alindi");
+            Console.WriteLine("-----------------");
 
 
         }
